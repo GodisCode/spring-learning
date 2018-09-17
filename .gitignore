@@ -14,6 +14,7 @@ target/
 .idea
 *.iws
 *.iml
+!spring.iml
 *.ipr
 
 ### NetBeans ###
@@ -23,3 +24,4 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
+ioc/src/test/resources/
