@@ -6,14 +6,14 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Created by Huy on 2018/8/21.
  */
-// @Configuration
+/*@Configuration
 public class CarConfig {
-    /*@Bean
+    @Bean
     public Car car() {
         Car car = new Car();
         car.setBrand("ABC");
         car.setColor("红色");
         car.setMaxSpeed(500);
         return car;
-    }*/
-}
+    }
+}*/

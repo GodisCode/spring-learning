@@ -2,6 +2,8 @@ package com.learning.spring.ioc.lifecycle;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
@@ -9,11 +11,12 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 /**
+ * Bean自身的方法和Bean级生命周期接口方法示例
+ *
  * Created by Huy on 2018/8/21.
  */
 @Component
-// @Lazy
-public class Car implements BeanNameAware, BeanFactoryAware, InitializingBean, DisposableBean {
+public class Car implements BeanNameAware, BeanFactoryAware, InitializingBean, DisposableBean, ApplicationContextAware {
     public static final String CAR_BEAN_NAME = "car";
 
     private String brand;
@@ -42,6 +45,11 @@ public class Car implements BeanNameAware, BeanFactoryAware, InitializingBean, D
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         System.out.println("调用BeanFactoryAware的setBeanFactory()");
         this.beanFactory = beanFactory;
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        System.out.println("调用ApplicationContextAware的setApplicationContext()");
     }
 
     @Override

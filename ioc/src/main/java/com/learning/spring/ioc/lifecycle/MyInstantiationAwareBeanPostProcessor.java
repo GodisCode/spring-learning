@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import java.beans.PropertyDescriptor;
 
 /**
+ * Bean后处理器之InstantiationAwareBeanPostProcessor示例
+ *
  * Created by Huy on 2018/8/21.
  */
 @Component
@@ -46,7 +48,7 @@ public class MyInstantiationAwareBeanPostProcessor extends InstantiationAwareBea
     }
 
     /**
-     * 在设置某个属性时调用
+     * 在Bean设置属性前调用
      * @param pvs
      * @param pds
      * @param bean

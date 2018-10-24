@@ -5,6 +5,8 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 
 /**
+ * Bean后处理器之BeanPostProcessor示例
+ *
  * Created by Huy on 2018/8/21.
  */
 @Component
@@ -29,6 +31,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
                 System.out.println("BeanPostProcessor.postProcessAfterInitialization()，将maxSpeed调整为200");
                 car.setMaxSpeed(200);
             }
+            System.out.println("最终的Car Bean是：" + car.toString());
         }
         return bean;
     }

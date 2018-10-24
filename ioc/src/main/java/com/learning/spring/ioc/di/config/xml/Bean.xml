@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- IoC xml配置方式 -->
+    <bean id="controller" class="com.learning.spring.ioc.di.config.bean.Controller">
+        <constructor-arg ref="service"/>
+    </bean>
+
+    <bean id="service" class="com.learning.spring.ioc.di.config.bean.Service">
+        <property name="dao" ref="dao"></property>
+    </bean>
+
+    <bean id="dao" class="com.learning.spring.ioc.di.config.bean.Dao"></bean>
+</beans>
